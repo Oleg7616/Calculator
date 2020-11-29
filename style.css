@@ -1,0 +1,21 @@
+.calc-row {
+    height: 100vh;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.input-window {
+    text-align: end;
+    font-size: x-large;
+}
+
+.card-body {
+    background-color: black;
+}
+
+#btn_clr {
+    background-color: darkred;
+}
+
+#btn_1,#btn_2,#btn_3,#btn_4,#btn_5,#btn_6,#btn_7,#btn_8,#btn_9,#btn_0,#btn_sum,#btn_def,#btn_mult,#btn_div,#btn_calc,#btn_root,#btn_fract {
+    background-color: blue;
+}
