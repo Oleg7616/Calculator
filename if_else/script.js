@@ -23,6 +23,10 @@ document.getElementById('btnRetry').addEventListener('click', function () {
      minValue = parseInt(prompt('Минимальное знание числа для игры','0'));
      maxValue = parseInt(prompt('Максимальное знание числа для игры','100'));
     alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
+    minValue = (minValue === '0') ? minValue : (parseInt(minValue) || 0); 
+    minValue = minValue < -999 ? -999 : minValue;
+    maxValue = (maxValue === '0') ? maxValue : (parseInt(maxValue) || 500); 
+    maxValue = maxValue > 999 ? 999 : maxValue;
     answerNumber  = Math.floor((minValue + maxValue) / 2);
     orderNumber = 0;
     gameRun = true;
@@ -40,7 +44,8 @@ document.getElementById('btnOver').addEventListener('click', function () {
                 `Вы загадали неправильное число!\n\u{1F914}` :
                 `Я сдаюсь..\n\u{1F92F}`;
 
-            answerField.innerText = answerPhrase;                                                                        gameRun = false;
+            answerField.innerText = answerPhrase;   
+            gameRun = false;
         } else {
             minValue = answerNumber  + 1;
             answerNumber  = Math.floor((minValue + maxValue) / 2);
